@@ -1,0 +1,23 @@
+\begin{table}[tb]
+\centering
+\caption{The most frequently chosen dose with $T=10000$ by each harmless algorithm across 100 repeated runs ($K=3$) and the proportion of runs in which it is chosen. The MND-H is 0.}
+\label{tab:table7}
+\begin{tabular}{lc}
+\hline
+Algorithm & Chosen dose \\
+\hline
+MND-H UCB ($\kappa=1$) & \textbf{0} (100\%) \\
+MND-H UCB ($\kappa=0.1$) & \textbf{0} (100\%) \\
+MND-H UCB ($\kappa=0.01$) & \textbf{0} (100\%) \\
+\hline
+MND-H UCB without confirmation task & \textbf{0} (100\%) \\
+Harmless UCB & 1 (100\%) \\
+MED-TS algorithm for harmless ($\phi=0.05$) & \textbf{0} (100\%) \\
+MED-TS algorithm for harmless ($\phi=0.1$) & \textbf{0} (100\%) \\
+MED-TS algorithm for harmless ($\phi=0.3$) & 1 (100\%) \\
+TS\_A algorithm for harmless ($\phi=0.05$) & 3 (51\%) \\
+TS\_A algorithm for harmless ($\phi=0.1$) & \textbf{0} (100\%) \\
+TS\_A algorithm for harmless ($\phi=0.3$) & 1 (100\%) \\
+\hline
+\end{tabular}
+\end{table}

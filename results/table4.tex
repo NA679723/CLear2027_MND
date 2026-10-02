@@ -1,0 +1,24 @@
+\begin{table}[tb]
+\centering
+\caption{The most frequently chosen dose with $T=10000$ by each benefit and harmless algorithm across 100 repeated runs and the proportion of runs in which it is chosen. The MND-B is 1 and the MND-H is 0.}
+\label{tab:4}
+\small
+\begin{tabular}{lc|lc}
+\hline
+Algorithm (Benefit) & Chosen dose & Algorithm (Harmless) & Chosen dose \\
+\hline
+MND-B UCB ($\kappa=1$) & \textbf{1} (72\%) & MND-H UCB ($\kappa=1$) & \textbf{0} (100\%) \\
+MND-B UCB ($\kappa=0.1$) & \textbf{1} (100\%) & MND-H UCB ($\kappa=0.1$) & \textbf{0} (100\%) \\
+MND-B UCB ($\kappa=0.01$) & \textbf{1} (100\%) & MND-H UCB ($\kappa=0.01$) & \textbf{0} (100\%) \\
+\hline
+MND-B UCB without confirmation task & \textbf{1} (65\%) & MND-H UCB without confirmation task & \textbf{0} (100\%) \\
+Benefit UCB & 2 (100\%) & Harmless UCB & 1 (100\%) \\
+MED-TS algorithm for benefit ($\phi=0.1$) & 0 (100\%) & MED-TS algorithm for harmless ($\phi=0.05$) & \textbf{0} (100\%) \\
+MED-TS algorithm for benefit ($\phi=0.8$) & \textbf{1} (100\%) & MED-TS algorithm for harmless ($\phi=0.1$) & \textbf{0} (100\%) \\
+MED-TS algorithm for benefit ($\phi=0.95$) & 2 (100\%) & MED-TS algorithm for harmless ($\phi=0.3$) & 1 (100\%) \\
+TS\_A algorithm for benefit ($\phi=0.1$) & 0 (100\%) & TS\_A algorithm for harmless ($\phi=0.05$) & 2 (100\%) \\
+TS\_A algorithm for benefit ($\phi=0.8$) & \textbf{1} (100\%) & TS\_A algorithm for harmless ($\phi=0.1$) & \textbf{0} (100\%) \\
+TS\_A algorithm for benefit ($\phi=0.95$) & 2 (100\%) & TS\_A algorithm for harmless ($\phi=0.3$) & 1 (100\%) \\
+\hline
+\end{tabular}
+\end{table}
