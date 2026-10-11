@@ -11,27 +11,28 @@ Mean HbA1c reduction by dose: 1.17 1.55 1.74 1.86
 Assumption 3 check: max |identified - true theta^MNH| = 1.31e-03
 MND-B = 10 U/day (gap 0.280), MND-H = 10 U/day (gap 0.278)
 Theorem 9 kappa bound: 0.00245; Theorem 10 kappa bound: 0.000150
-MND-B kappa=1                                 chosen 36/39/7/13/5  final regret  2095.4  dose 11.4 target 0.437 intens 0.040 over 0.198
-MND-B kappa=0.1                               chosen 27/73/0/0/0  final regret   793.2  dose 7.9 target 0.442 intens 0.010 over 0.054
-MND-B kappa=0.01                              chosen 0/100/0/0/0  final regret   380.2  dose 9.8 target 0.531 intens 0.014 over 0.072
-MND-H kappa=1                                 chosen 100/0/0/0/0  final regret  2775.3  dose 0.0 target 0.055 intens 0.000 over 0.000
-MND-H kappa=0.1                               chosen 100/0/0/0/0  final regret  2788.9  dose 0.8 target 0.077 intens 0.004 over 0.017
-MND-H kappa=0.01                              chosen 100/0/0/0/0  final regret  2907.7  dose 8.1 target 0.271 intens 0.036 over 0.171
-MND-H kappa=0.003                             chosen 100/0/0/0/0  final regret  3072.1  dose 18.2 target 0.540 intens 0.081 over 0.384
-MND-H kappa=0.001                             chosen 0/100/0/0/0  final regret  3151.0  dose 23.1 target 0.668 intens 0.102 over 0.486
-MND-B UCB without confirmation task           chosen 33/43/1/17/6  final regret  1926.6  dose 11.6 target 0.445 intens 0.040 over 0.186
-Benefit UCB                                   chosen 0/0/0/0/100  final regret  4466.9  dose 36.0 target 0.801 intens 0.187 over 0.736
-MED-TS for benefit ($\phi=0.5$)               chosen 0/99/1/0/0  final regret    82.6  dose 10.2 target 0.569 intens 0.011 over 0.066
-MED-TS for benefit ($\phi=0.7$)               chosen 0/0/72/28/0  final regret  3902.1  dose 23.4 target 0.733 intens 0.097 over 0.611
-MED-TS for benefit ($\phi=0.8$)               chosen 0/0/0/0/100  final regret  4613.9  dose 38.5 target 0.816 intens 0.205 over 0.766
-TS\_A for benefit ($\phi=0.5$)                chosen 0/100/0/0/0  final regret    82.8  dose 10.3 target 0.570 intens 0.012 over 0.066
-TS\_A for benefit ($\phi=0.7$)                chosen 0/0/100/0/0  final regret  3673.9  dose 20.4 target 0.710 intens 0.074 over 0.567
-TS\_A for benefit ($\phi=0.8$)                chosen 0/0/0/57/43  final regret  4495.5  dose 34.2 target 0.797 intens 0.176 over 0.735
-MND-H UCB without confirmation task           chosen 100/0/0/0/0  final regret  2775.3  dose 0.0 target 0.055 intens 0.000 over 0.000
-Harmless UCB                                  chosen 0/0/65/34/1  final regret  3815.9  dose 26.3 target 0.741 intens 0.119 over 0.614
-MED-TS for harmless ($\phi=0.5$)              chosen 0/100/0/0/0  final regret    75.8  dose 10.2 target 0.569 intens 0.011 over 0.065
-MED-TS for harmless ($\phi=0.7$)              chosen 0/0/70/30/0  final regret  3908.2  dose 24.8 target 0.738 intens 0.107 over 0.619
-MED-TS for harmless ($\phi=0.8$)              chosen 0/0/79/21/0  final regret  3898.6  dose 24.4 target 0.736 intens 0.105 over 0.616
-TS\_A for harmless ($\phi=0.5$)               chosen 0/100/0/0/0  final regret   462.1  dose 12.4 target 0.588 intens 0.026 over 0.123
-TS\_A for harmless ($\phi=0.7$)               chosen 0/0/70/30/0  final regret  3902.2  dose 24.6 target 0.738 intens 0.106 over 0.617
-TS\_A for harmless ($\phi=0.8$)               chosen 0/0/69/31/0  final regret  3930.4  dose 25.1 target 0.741 intens 0.110 over 0.624
+MND-B kappa=1                                 chosen 3/97/0/0/0  final regret    73.4  dose 9.7 target 0.553 intens 0.010 over 0.053
+MND-B kappa=0.1                               chosen 1/99/0/0/0  final regret    26.5  dose 9.9 target 0.561 intens 0.010 over 0.055
+MND-B kappa=0.01                              chosen 0/100/0/0/0  final regret   234.7  dose 9.4 target 0.530 intens 0.010 over 0.055
+MND-H kappa=1                                 chosen 100/0/0/0/0  final regret  2775.2  dose 0.0 target 0.055 intens 0.000 over 0.000
+MND-H kappa=0.1                               chosen 100/0/0/0/0  final regret  2775.2  dose 0.0 target 0.055 intens 0.000 over 0.000
+MND-H kappa=0.01                              chosen 100/0/0/0/0  final regret  2893.8  dose 7.3 target 0.248 intens 0.032 over 0.154
+MND-H kappa=0.003                             chosen 100/0/0/0/0  final regret  3065.4  dose 17.8 target 0.528 intens 0.079 over 0.376
+MND-H kappa=0.001                             chosen 0/100/0/0/0  final regret  3151.4  dose 23.1 target 0.669 intens 0.103 over 0.487
+MND-H kappa=0.001, T=100000: chosen 0/100/0/0/0  final regret 8676.2  second-half regret 520.8  dose 11.8 target 0.543 intens 0.028 over 0.137
+MND-B UCB without confirmation task           chosen 2/98/0/0/0  final regret    52.2  dose 9.8 target 0.556 intens 0.010 over 0.054
+Benefit UCB                                   chosen 0/0/0/0/100  final regret  4521.2  dose 36.7 target 0.807 intens 0.192 over 0.747
+MED-TS for benefit ($\phi=0.5$)               chosen 0/100/0/0/0  final regret    59.7  dose 10.1 target 0.569 intens 0.011 over 0.063
+MED-TS for benefit ($\phi=0.7$)               chosen 0/0/81/19/0  final regret  3878.8  dose 23.1 target 0.730 intens 0.095 over 0.607
+MED-TS for benefit ($\phi=0.8$)               chosen 0/0/0/0/100  final regret  4610.9  dose 38.4 target 0.816 intens 0.205 over 0.765
+TS\_A for benefit ($\phi=0.5$)                chosen 0/100/0/0/0  final regret    78.7  dose 10.3 target 0.568 intens 0.012 over 0.065
+TS\_A for benefit ($\phi=0.7$)                chosen 0/0/100/0/0  final regret  3675.2  dose 20.4 target 0.711 intens 0.075 over 0.566
+TS\_A for benefit ($\phi=0.8$)                chosen 0/0/0/61/39  final regret  4484.7  dose 33.8 target 0.796 intens 0.173 over 0.733
+MND-H UCB without confirmation task           chosen 100/0/0/0/0  final regret  2775.2  dose 0.0 target 0.055 intens 0.000 over 0.000
+Harmless UCB                                  chosen 0/0/78/22/0  final regret  3828.5  dose 26.3 target 0.744 intens 0.119 over 0.616
+MED-TS for harmless ($\phi=0.5$)              chosen 0/100/0/0/0  final regret    75.8  dose 10.2 target 0.568 intens 0.012 over 0.065
+MED-TS for harmless ($\phi=0.7$)              chosen 0/0/70/29/1  final regret  3925.5  dose 24.9 target 0.739 intens 0.108 over 0.622
+MED-TS for harmless ($\phi=0.8$)              chosen 0/0/69/31/0  final regret  3917.8  dose 24.8 target 0.739 intens 0.107 over 0.621
+TS\_A for harmless ($\phi=0.5$)               chosen 0/100/0/0/0  final regret   425.5  dose 12.2 target 0.586 intens 0.025 over 0.118
+TS\_A for harmless ($\phi=0.7$)               chosen 0/0/64/35/1  final regret  3946.6  dose 25.3 target 0.742 intens 0.111 over 0.627
+TS\_A for harmless ($\phi=0.8$)               chosen 0/0/63/37/0  final regret  3977.4  dose 25.6 target 0.745 intens 0.113 over 0.632
