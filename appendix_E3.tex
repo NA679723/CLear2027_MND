@@ -1,0 +1,31 @@
+\subsection{Semi-synthetic experiment with NHANES patients}\label{appB3}
+\noindent{\bf Data and simulator.}
+We build a semi-synthetic benchmark in which the patients are real and only their responses to insulin are simulated. We take the 229 insulin-naive adults with diagnosed diabetes and HbA1c $\ge7\%$ in the National Health and Nutrition Examination Survey (NHANES) 2017--2018 \citep{nhanes2017}, i.e., the patients for whom basal insulin initiation is typically considered (Table~\ref{tab:nhanes_cohort}). Each simulated patient is drawn with replacement from this cohort and keeps their measured baseline HbA1c $A_0$ and body weight $W$.
+For a daily basal insulin dose $d_k\in\{0, 10, 20, 30, 40\}$ U/day ($K=4$), the HbA1c after treatment follows an $E_{\max}$ model on the excess HbA1c above $5\%$,
+\[Y_k=5+(A_0-5)\Big(1-E_{\max}\frac{S\,d_k}{ED_{50}+S\,d_k}\Big)+\varepsilon,\qquad S=\frac{\bar W}{W}\,e^{\eta},\]
+with $E_{\max}=0.7$, $ED_{50}=10$ U/day, $\bar W=86.2$\,kg the median cohort weight, so that the effect depends on the dose per kilogram, $\eta\sim N(0,0.3^2)$ unexplained between-patient variation, and $\varepsilon\sim N(0,0.15^2)$ assay noise shared across doses. With these values, the mean HbA1c reduction is 1.2, 1.5, 1.7, 1.9 percentage points at 10, 20, 30, 40 U/day, respectively (0.12--0.46 U/kg for a patient of median weight), of the same order as the reductions reported when basal insulin is added to oral therapy \citep{riddle2003}. The parameters of the dose response are chosen to be clinically plausible but are not fitted to trial data. We use the ADA target HbA1c $\le7\%$ \citep{ada2025glycemic} as the benefit ($y^u=7.0$) and the intensive target HbA1c $\le6\%$, which increased mortality and severe hypoglycemia in the ACCORD trial \citep{accord2008}, as the harm ($y^l=6.0$).
+Since $Y_k$ is decreasing in $k$ for every patient, Assumptions~\ref{MON} and~\ref{MON2} hold. Assumption~\ref{MIN} is not guaranteed because the latent variable $(A_0,W,\eta,\varepsilon)$ is multi-dimensional; because the simulator returns all potential outcomes, we compute the true $\theta^{\text{MNH}}$ from the joint counterfactual outcomes and compare it with the identified expression in Theorem~\ref{theo5}, finding a maximum discrepancy of $1.3\times10^{-3}$.
+
+Table~\ref{tab:nhanes_truth} shows the ground truth. The Benefit criterion is maximized at 40 U/day and the Harmless criterion at 20 U/day, whereas the MND-B is 10 U/day and the MND-H is 10 U/day: 10 U/day is exactly necessary for the largest share (51.1\%) of patients. At 40 U/day, 21.5\% of patients are driven to HbA1c $\le6\%$ and 77.9\% are over-treated, compared with 1.0\% and 5.5\% at 10 U/day.
+
+\noindent{\bf Results.}
+We set $T^{\text{initial}}=10$ and $T=10000$, and repeat each experiment 100 times. Table~\ref{tab:nhanes_choice} shows the chosen doses, Figures~\ref{fig:nhanesB} and~\ref{fig:nhanesH} the cumulative regret, and Table~\ref{tab:nhanes_clinical} the outcomes of the trial patients.
+MND-B UCB identifies the MND-B in 39\%, 73\% and 100\% of runs with $\kappa=1$, $0.1$ and $0.01$, respectively. Benefit UCB converges to 40 U/day and Harmless UCB to 20 U/day, and the doses chosen by the MED-based methods depend on $\phi$. Compared with Benefit UCB, MND-B UCB ($\kappa=0.01$) administers 9.8 instead of 36.0 U/day on average and reduces over-intensive control (HbA1c $\le6\%$) from 18.7\% to 1.4\% and over-treatment from 73.6\% to 7.2\%, while 53.1\% instead of 80.1\% of patients reach the target. This reflects the trade-off that the MND makes explicit: it targets the dose that is necessary for the largest share of patients rather than the dose that brings the most patients to target.
+
+MND-H UCB identifies the MND-H in 0\%, 0\% and 0\% of runs with $\kappa=1$, $0.1$ and $0.01$, and in 0\% with $\kappa=0.003$ and 100\% with $\kappa=0.001$. The difficulty is the confidence radius of dose~$0$, $r_0=\sum_{k=1}^K r_k$. When dose~$0$ leads, its confirmation partners are sampled only until their counts reach about $\log(t)/\kappa$ (Step~1 of the proof of Theorem~\ref{theo6}), so each $r_k$ stays near $2\sqrt{\kappa}$ and $r_0$ is of order $2K\sqrt{\kappa}$; dose~$0$ is therefore abandoned only if roughly $\kappa\lesssim(\Delta_0/2K)^2\approx0.0012$ in this setting ($\Delta_0=0.278$). For MND-B UCB, the radius of dose~$0$ involves only doses $0$ and $K$ and stays near $\sqrt{2\kappa}$, giving the much weaker requirement $\kappa\lesssim\Delta_0^2/2\approx0.04$. With $\kappa$ below this threshold, MND-H UCB identifies the MND-H, but a smaller $\kappa$ also lengthens confirmation (the term $\log(T)/\kappa$ in Theorem~\ref{theo6}), so in this setting MND-H UCB requires $\kappa$ in a narrow range that depends on the unknown gaps. This limitation grows with $K$, consistent with the factor $K^2$ in Theorem~\ref{theo6}; a tighter confidence bound for $\theta^{\text{MNH}}(0)$ that exploits the telescoping structure of $\sum_k\theta^{\text{MNH}}(k)$ is an interesting direction for future work.
+
+\begin{figure}[tb]
+\begin{minipage}[t]{.48\textwidth}\centering
+\includegraphics[width=\linewidth]{FigNHANES_bene.pdf}
+\caption{Mean cumulative regret of MND-B UCB in the semi-synthetic NHANES experiment over 100 runs (red solid: $\kappa=1$; green dashed: $\kappa=0.1$; blue dotted: $\kappa=0.01$).}\label{fig:nhanesB}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\textwidth}\centering
+\includegraphics[width=\linewidth]{FigNHANES_harm.pdf}
+\caption{Mean cumulative regret of MND-H UCB in the semi-synthetic NHANES experiment over 100 runs (red solid: $\kappa=1$; green dashed: $\kappa=0.1$; blue dotted: $\kappa=0.01$).}\label{fig:nhanesH}
+\end{minipage}
+\end{figure}
+
+\input{table_nhanes_cohort}
+\input{table_nhanes_truth}
+\input{table_nhanes_choice}
+\input{table_nhanes_clinical}

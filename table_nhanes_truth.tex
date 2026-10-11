@@ -1,0 +1,18 @@
+\begin{table}[tb]
+\centering
+\caption{Ground truth of each basal insulin dose in the semi-synthetic experiment, computed from $2\times10^6$ patients resampled from the NHANES cohort. Over-treated: the patient would also have reached the target at the next lower dose. Bold: the optimum of each criterion.}
+\label{tab:nhanes_truth}
+\small
+\begin{tabular}{lccccc}
+\hline
+Dose (U/day) & 0 & 10 & 20 & 30 & 40 \\
+\hline
+$\theta^{\text{B}}$ (HbA1c $\le7\%$) & 0.055 & 0.566 & 0.709 & 0.779 & \textbf{0.823} \\
+$\theta^{\text{H}}$ ($6\%<$ HbA1c $\le7\%$) & 0.055 & 0.556 & \textbf{0.638} & 0.632 & 0.609 \\
+$\theta^{\text{MNB}}$ & 0.231 & \textbf{0.511} & 0.143 & 0.070 & 0.044 \\
+$\theta^{\text{MNH}}$ & 0.233 & \textbf{0.510} & 0.143 & 0.070 & 0.044 \\
+HbA1c $\le6\%$ & 0.000 & 0.010 & 0.071 & 0.147 & 0.215 \\
+Over-treated & 0.000 & 0.055 & 0.566 & 0.709 & 0.779 \\
+\hline
+\end{tabular}
+\end{table}

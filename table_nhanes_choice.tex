@@ -1,0 +1,25 @@
+\begin{table}[tb]
+\centering
+\caption{Most frequently chosen dose in the semi-synthetic experiment ($T=10000$, $T^{\text{initial}}=10$, 100 runs) and the proportion of runs in which it is chosen. The MND-B is 10 U/day and the MND-H is 10 U/day.}
+\label{tab:nhanes_choice}
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lc|lc}
+\hline
+Algorithm (Benefit) & Chosen dose & Algorithm (Harmless) & Chosen dose \\
+\hline
+MND-B UCB ($\kappa=1$) & \textbf{10 U/day} (39\%) & MND-H UCB ($\kappa=1$) & 0 U/day (100\%) \\
+MND-B UCB ($\kappa=0.1$) & \textbf{10 U/day} (73\%) & MND-H UCB ($\kappa=0.1$) & 0 U/day (100\%) \\
+MND-B UCB ($\kappa=0.01$) & \textbf{10 U/day} (100\%) & MND-H UCB ($\kappa=0.01$) & 0 U/day (100\%) \\
+\hline
+MND-B UCB without confirmation task & \textbf{10 U/day} (43\%) & MND-H UCB without confirmation task & 0 U/day (100\%) \\
+Benefit UCB & 40 U/day (100\%) & Harmless UCB & 20 U/day (65\%) \\
+MED-TS for benefit ($\phi=0.5$) & \textbf{10 U/day} (99\%) & MED-TS for harmless ($\phi=0.5$) & \textbf{10 U/day} (100\%) \\
+MED-TS for benefit ($\phi=0.7$) & 20 U/day (72\%) & MED-TS for harmless ($\phi=0.7$) & 20 U/day (70\%) \\
+MED-TS for benefit ($\phi=0.8$) & 40 U/day (100\%) & MED-TS for harmless ($\phi=0.8$) & 20 U/day (79\%) \\
+TS\_A for benefit ($\phi=0.5$) & \textbf{10 U/day} (100\%) & TS\_A for harmless ($\phi=0.5$) & \textbf{10 U/day} (100\%) \\
+TS\_A for benefit ($\phi=0.7$) & 20 U/day (100\%) & TS\_A for harmless ($\phi=0.7$) & 20 U/day (70\%) \\
+TS\_A for benefit ($\phi=0.8$) & 30 U/day (57\%) & TS\_A for harmless ($\phi=0.8$) & 20 U/day (69\%) \\
+\hline
+\end{tabular}}
+\end{table}
